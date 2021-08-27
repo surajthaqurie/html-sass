@@ -1,0 +1,56 @@
+// Global (basic) definition about our entire project
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    box-sizing: inherit;
+}
+
+
+// www.sizzy.com this website shows the page on lot of different devices 
+html {
+   // This defines what 1rem is By default 1rem = 16px
+    font-size: 62.5%;   /* here 1rem = 10px (10/16 =  62.5%) We needed */
+
+    // @include respond(phone){
+    //     font-size: 50%;
+    // }
+   
+
+    // *IMP* order - Always the larger one before smaller one (Here they are with max-width)
+    
+     @include respond(tab-land){  // width < 1200? (runs first)
+        font-size: 56.25%;     // 1rem = 9px (9/16 = 56.25%)
+    }
+
+    @include respond(tab-port){ // width < 900? (runs second)
+        font-size: 50%;         // 1rem = 8px (8/16 = 50%)
+    }
+
+    // @include respond(phone){ // width < 600? (runs third)
+    //     font-size: 30%;      // 1rem = 4.8px (4.8/16 = 50%)
+    // }
+
+    @include respond(big-desktop){ // Its with: min-width
+        font-size: 80%;          // 1rem = 12px (12/16=75%)
+    }
+}
+
+body {
+    box-sizing: border-box;
+    padding: 3rem;
+
+    @include respond(tab-port){ // width < 900? (runs second)
+        padding: 0;        // 1rem = 8px (8/16 = 50%)
+    }
+}
+
+
+// select some text on the page (personal style)
+::selection{
+    background-color: $color-primary;
+    color: $color-white;
+}

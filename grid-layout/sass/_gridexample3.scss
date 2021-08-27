@@ -1,0 +1,60 @@
+.container {
+    width: 1000px;
+    margin: 30px auto;
+    
+    background-color: #ddd;
+    
+    display: grid;
+    
+    /* USING MIN-CONTENT AND MAX-CONTENT
+    // grid-template-rows: repeat(2, 150px);
+    // grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+    // max-content: It makes this column as wide as it has to be to fit this content, and in fact, max-content also tires not to make any line breaks
+    // min-contnet: That the columns track takes the largest width that is needed to fit this content without overflowing
+      grid-template-columns: max-content 1fr 1fr min-content;
+      // grid-template-rows: repeat(2, min-content);
+    */
+   
+    /* USING MINMAX() */
+    
+    width: 90%;
+    
+    // minmax() function: It is just something that we pass two values in and then CSS ensures that the track will always stay between these two values 
+    grid-template-rows: repeat(2, minmax(150px, min-content));
+    
+    // grid-template-columns: minmax(200px, 300px) repeat(3, 1fr);
+    // grid-template-columns: minmax(200px, 50%) repeat(3, 1fr);
+    grid-template-columns: minmax(200px, 1fr) repeat(3, 1fr);
+    
+    
+    // So the CSS Grid specification says that a fractional unit fills up th entire remaining space but it is never smaller than the minimum content of a row or a column
+  
+  
+    
+    .item {
+      padding: 20px; 
+      color: white;
+      font-family: sans-serif;
+      font-size: 30px;
+      background-color: orangered;
+    
+      &--1 { background-color: orangered; }
+    
+      &--2 { background-color: yellowgreen; }
+  
+      &--3 { background-color: blueviolet; }
+  
+      &--4 { background-color: palevioletred; }
+  
+      &--5 { background-color: royalblue; }
+  
+      &--6 { background-color: goldenrod; }
+  
+      &--7 { background-color: crimson; }
+  
+      &--8 { background-color: darkslategray ; }
+  
+     }
+  }
+  

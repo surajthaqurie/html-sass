@@ -1,0 +1,61 @@
+// height overlap  clear the floats
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both; // both floats : left and right
+    }
+
+}
+
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY MANAGER
+
+/*
+0 - 600px: Phone
+600px - 900px: Tablet portrait
+900px - 1200px: Tablet landscape
+[1200px - 1800px] is where our normal styles apply (desktop)
+1800px+:   Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general laypout + grid > page layput > components
+
+*/
+
+// iem = 16px (that because ems and rems in media queries they are not affected by root font size setting
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+      // Media qurey only applied to the screens eg: print out our page these medai query donot apply
+    @media only screen and (max-width: 37.5em) { @content }; // 600px (600/16)
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) { @content }; // 900px
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) { @content }; // 1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) { @content }; // 1800px
+  }
+}
+
+/*
+@mixin respond-phone {
+    @media (max-width: 600px) {
+      // Content directive: Basically allows us to parse a block of code into a mixing.
+        @content
+    }
+}
+*/

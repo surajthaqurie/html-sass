@@ -1,0 +1,81 @@
+.container {
+    width: 1000px;
+    margin: 30px auto;
+    
+    background-color: #ddd;
+    
+    display: grid;
+    
+    // The first part of the grid, the part that we actually defined in our code is the explicite grid. Here:
+    // grid-template-rows: repeat(2, 150px);
+    // grid-template-columns: repeat(2, 1fr);
+    
+    // Then the part that is automatically added in order to fit the content that doesn't fit in our explicite grid, Css adds the implicit grid after that.
+    
+    grid-gap: 30px;
+    
+    // now Implicit grid flow to column no longer to rows: default rows
+    // dense: no holes, all the items packed so that all the grid cells are filled
+    grid-auto-flow: row dense;
+    
+    // For styling Implicit grid:
+    grid-auto-rows: 80px;
+    grid-auto-columns: .5fr;
+    
+   /* Align grid items to grid areas */
+    
+    // Similar as Flexbox it align the items across the Column-axis(Y)
+      // align-items: center;        // DEFAULT: STRETCH | center | end | start
+    
+    // It align the items across the Rows-axis(X) 
+    //  ustify-items: center;        // DEFAULT: STRETCH | center | end | start
+    
+    /* Align grid tracks to grid container */
+    
+    grid-template-rows: repeat(2, 100px);
+    grid-template-columns: repeat(2, 200px);
+    height: 1000px;
+    
+    
+    // Similar as Flexbox : Horizontally align the tracks
+    justify-content: center;      // center | end | start | space-between | space-around | space-evenly
+    
+    // Vertically align the tracks
+    align-content: center;        // center | end | start | space-between | space-around | space-evenly
+    
+    
+    
+    .item {
+      padding: 20px; 
+      color: white;
+      font-family: sans-serif;
+      font-size: 30px;
+      background-color: orangered;
+      
+      &--4{
+        background-color: crimson;
+        
+        grid-row: 2 / span 3;
+        
+        // As in Flexbox, where you have the align-self property to basically override the aling-items property for one individual item, we can same here  in Grid
+        // align-self: start;
+        
+        // In Flexbox there is no justify-self because of one dimensional but Grid is two dimensinal so it override the justify-items property
+        // justify-self: start;
+        
+      }
+      
+       &--6 {
+          background-color: lightcoral;
+         
+         grid-row: 2 / span 2;
+        }
+      
+      &--7{
+        background-color: palevioletred; 
+        
+        grid-column: 1 / -1;
+        
+      }
+    }
+  }

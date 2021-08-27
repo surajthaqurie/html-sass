@@ -1,0 +1,52 @@
+.container {
+    width: 1000px;
+    margin: 30px auto;
+    
+    background-color: #ddd;
+    
+    display: grid;
+    
+   /* USING AUTO-FILL and AUTO-FIT */
+  
+   grid-template-rows: repeat(2, minmax(150px, min-content));
+  
+  // grid-template-columns: repeat(4, 1fr);
+  
+  // auto-fill: It automatically creates as many tracks with the desired width the we specify here as fit in to the container
+    grid-template-columns: repeat(auto-fill, 100px);
+  
+  // auto-fit: It actually collapses empty tracks and gives it a width of zero, rather then creating extra space like auto-fill.
+      grid-template-columns: repeat(auto-fit, 100px);
+       
+  
+  width: 90%; 
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  
+  grid-auto-rows: 150px;
+
+   .item {
+      padding: 20px; 
+      color: white;
+      font-family: sans-serif;
+      font-size: 30px;
+      background-color: orangered;
+    
+      &--1 { background-color: orangered; }
+    
+      &--2 { background-color: yellowgreen; }
+  
+      &--3 { background-color: blueviolet; }
+  
+      &--4 { background-color: palevioletred; }
+  
+      &--5 { background-color: royalblue; }
+  
+      &--6 { background-color: goldenrod; }
+  
+      &--7 { background-color: crimson; }
+  
+      &--8 { background-color: darkslategray ; }
+  
+     }
+  }
+  

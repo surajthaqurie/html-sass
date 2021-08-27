@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background: #ccc;
+  padding: 10px;
+
+  display: flex;
+
+  // It defines in which direction  main-axis(X) goes
+  flex-direction: row; // DEFAULT: row | row-reverse | column | column-reverse
+
+  // justify-content: this property is used to control how the items should be positioned along the main-axis
+  //justify-content:how the flex items are alinged along the main-axis
+  justify-content: center; // DEFAULT: flex-start | flex-end | center | space-between | space-round | space-evenly
+
+  //  align-items: how the flex items are alinged along the cross-axis
+  align-items: center; // DEFAULT: stretch | flex-start | flex-end | center | baseline(align with their common text)
+
+  /* For Column 
+  
+  height: 1500px;
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: flex-end;
+
+  */
+  
+    height: 1000px;  // testing warp
+
+  // flex-wrap: it wrapes the element into new line if there is not enough space(no longer fit in the container)
+  flex-wrap: wrap;    // DEFAULT: nowrap | wrap | wrap-reverse
+  
+  // align-content: It aligns the rows along the cross axis (only applies of there is more than one row of flex items)  how the row are aligned along the cross axis if there is empty space
+  align-content: flex-start;  // DEFAULT: stretch | flex-start | flex-end | center | space-between | space-around 
+
+
+  .item { 
+    background-color: #f1425d;
+    padding: 30px;
+    // margin: 30px;   
+    margin: 5px;  // testing warp
+
+    color: #fff;
+    font-size: 40px;
+
+    // flex-grow: is the ability of an element to grow (they growed as much as they can)
+    // flex-grow: 1;        // DEFAULT: 1 | <interger>
+    // flex: 1;
+  }
+
+  .i2 {
+    height: 200px;
+
+    // Here, this one has three the ability to grow than all the other flex items.
+    // flex-grow: 3;
+    // flex: 3;
+
+    // flex-basis: we can set the width of a flex item
+    // flex-basis: 20%;    // DEFAULT: auto | length of width
+    // flex-basis: 300px;
+
+    // flex-shrink: it controls how an element can shrink. Initial value of flex-shrink is one, it means it basically allowed to shrink and zero means element no longer about to shrink
+    // flex-shrink: 0;         // DEFAULT: 1 | <integer>
+
+    // Shorthand for flex-grow | flex-shrink | flex-basis
+    flex: 0 1 300px;
+  }
+
+  .i3 {
+    order: 1;
+
+    // Here, this one occupies all the space that it can so all the aviable white space and the remaining flex item here they just occupy the rest of the space
+    flex: 1;
+  }
+  .i4 {
+    // font-size: 70px;
+
+    // align-self: it overrides the aling-items property for individual item (cross-axis)
+    // align-self: flex-end; // DEFAULT: auto | stretch | flex-start | flex-end | center | baseline
+
+    // order: Flexbox orders all of these elements according the order number and initial value of order is zero since Flexbox start ordering from the lowest order number.
+    order: -1; // DEFAULT: 0 | <integer>
+  }
+}
