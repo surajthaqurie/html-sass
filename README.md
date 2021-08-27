@@ -111,9 +111,9 @@
     
   ### [6. Layout Types](git-docs/Layouts.md)
     
-    This Section will recap some of the CSS layout features we've already touched upon in previous modules, such as different ```display``` values, as well as introduce some of the concepts we'll be covering throughout this module.
+This Section will recap some of the CSS layout features we've already touched upon in previous modules, such as different ```display``` values, as well as introduce some of the concepts we'll be covering throughout this module.
     
-    Some imporatant layout are: ([... See more](git-docs/Layouts.md))
+Some imporatant layout are: ([... See more](git-docs/Layouts.md))
     
   ### [7. Break Points](git-docs/BreakPoints.md)
     
