@@ -140,6 +140,8 @@ Media queries are used for the following:
   
   Some imporatant layout are: ([... See more](Layouts.md))
   
+ ### [7. Break Points](BreakPoints.md)
+  
  CSS breakpoints are points where the website content responds according to the device width, allowing you to show the best possible layout to the user.
 
 CSS breakpoints are also called media query breakpoints, as they are used with media query. ([... See more](BreakPoints.md))
